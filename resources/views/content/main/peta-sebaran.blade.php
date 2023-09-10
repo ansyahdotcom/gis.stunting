@@ -39,7 +39,6 @@
                                 </div> --}}
                                 @php
                                     foreach ($desa as $key => $value) {
-                                        # code...
                                         echo $value->nama_desa;
                                     }
                                 @endphp

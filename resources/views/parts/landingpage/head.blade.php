@@ -22,9 +22,15 @@
     <link rel="stylesheet" href="{{asset('assets\extra-pages\landingpage\assets\css\magnific-popup.css')}}">
     <!-- Full Page Animation -->
     <link rel="stylesheet" href="{{asset('assets\extra-pages\landingpage\assets\css\animsition.min.css')}}">
+    <!-- feather Awesome -->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/assets/icon/feather/css/feather.css')}}">
     <!-- Ionic Icons -->
     <link rel="stylesheet" href="{{asset('assets\extra-pages\landingpage\assets\css\ionicons.min.css')}}">
+    {{-- JQuery --}}
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    {{-- Fancy box --}}
+    <link href="{{ asset('assets/assets/css/jquery.fancybox.min.css') }}" rel="stylesheet">
+
     <!-- Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="

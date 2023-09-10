@@ -44,7 +44,7 @@
                         </div>
                         @foreach ($articles as $item)
                         <div class="post">
-                            <figure class="post-thumb"><a href="/article/{{  $item->title }}"><img src="/storage/{{ $article->img }}" alt=""></a></figure>
+                            <figure class="post-thumb"><a href="/article/{{  $item->title }}"><img src="/storage/{{ $item->img }}" alt=""></a></figure>
                             <h6 style="font-weight: bold;"><a href="/article/{{  $item->title }}">{{  str_replace('_', ' ', $item->title) }}</a></h6>
                             {{-- <div class="post-date"><i class="far fa-calendar-alt"></i>{{  $item->date }}</div> --}}
                         </div>  

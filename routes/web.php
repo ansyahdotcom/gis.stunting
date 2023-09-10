@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DesaController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\DataAnakController;
 use App\Http\Controllers\DataBBpUController;
 use App\Http\Controllers\DataTBpUController;
@@ -55,6 +56,7 @@ Route::resource('data-desa', DesaController::class);
 // article
 Route::resource('/dashboard/article', DashboardArticleController::class);
 Route::post('/dashboard/article/post/{title}', [DashboardArticleController::class, 'post']);
+Route::resource('/article', ArticleController::class);
 // video
 Route::resource('/dashboard/video', DashboardVideoController::class);
 Route::post('/dashboard/video/post/{title}', [DashboardVideoController::class, 'post']);

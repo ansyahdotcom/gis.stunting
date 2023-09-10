@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Video;
+use App\Models\Article;
+use App\Models\HasilZscore;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\HasilZscore;
+use App\Http\Controllers\Controller;
 
 class DashboardController extends Controller
 {
@@ -63,6 +66,10 @@ class DashboardController extends Controller
                                 ->join('users', 'hasil_zscore.id', '=', 'users.id')
                                 ->groupby('nama_desa', 'longtd', 'latd')
                                 ->get();
-        return view('content/landingpage/index', $data);
+        return view('content/landingpage/index', [
+            'data' => $data,
+            'article' => Article::where('posted', '=', '1')->latest()->limit(3)->get(),
+            // 'video' => Video::where('posted', '=', '1')->latest()->limit(3)->get()
+        ]);
     }
 }
