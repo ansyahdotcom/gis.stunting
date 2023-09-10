@@ -13,6 +13,7 @@ use App\Http\Controllers\DataIMTpUController;
 use App\Http\Controllers\DataZscoreController;
 use App\Http\Controllers\KlasifikasiController;
 use App\Http\Controllers\PetasebaranController;
+use App\Http\Controllers\DashboardVideoController;
 use App\Http\Controllers\DashboardArticleController;
 
 /*
@@ -51,6 +52,9 @@ Route::resource('data-anak', DataAnakController::class);
 Route::resource('data-user', DataUserController::class);
 Route::resource('data-desa', DesaController::class);
 
-// artikel
+// article
 Route::resource('/dashboard/article', DashboardArticleController::class);
 Route::post('/dashboard/article/post/{title}', [DashboardArticleController::class, 'post']);
+// video
+Route::resource('/dashboard/video', DashboardVideoController::class);
+Route::post('/dashboard/video/post/{title}', [DashboardVideoController::class, 'post']);
