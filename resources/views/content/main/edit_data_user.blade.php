@@ -25,7 +25,7 @@
                                                     </div>
                                                     <div class="card-block">
                                                         <hr>
-                                                        <form method="POST" action="{{ url('data-user/'.$model->id_user)}}"accept-charset="UTF-8">
+                                                        <form method="POST" action="{{ url('data-user/'.$model->id)}}"accept-charset="UTF-8">
                                                             {{ csrf_field() }}
                                                             <div class="form-group row">
                                                                 <label class="col-sm-2 col-form-label">Nama User</label>

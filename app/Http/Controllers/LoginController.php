@@ -38,7 +38,7 @@ class LoginController extends Controller
             foreach ($users as $key => $value) {
                 # code...
                 $sesi = [
-                    'id_user'   => $value->id_user,
+                    'id'        => $value->id,
                     'nama'      => $value->nama,
                     'jabatan'   => $value->jabatan,
                     'username'  => $value->username,

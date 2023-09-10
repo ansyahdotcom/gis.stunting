@@ -56,12 +56,12 @@
                                                                         <td>{{$data->username}}</td>
                                                                         <td>
                                                                             <div class="btn-group " role="group">
-                                                                                <a href="{{url('data-user/'.$data->id_user.'/edit')}}" type="button" class="btn btn-warning btn-sm waves-effect waves-light" data-toggle="tooltip"
+                                                                                <a href="{{url('data-user/'.$data->id.'/edit')}}" type="button" class="btn btn-warning btn-sm waves-effect waves-light" data-toggle="tooltip"
                                                                                 data-placement="top" title=""
                                                                                 data-original-title="Update"><i class="feather icon-edit-2"></i></a>
                                                                                 <a href="javascript:void(0)" class="btn btn-danger btn-sm waves-effect waves-light button" id="delete" data-toggle="tooltip"
                                                                                 data-placement="top" title=""
-                                                                                data-original-title="delete" data-url="{{url('data-user/'.$data->id_user)}}" data-id="{{$data->id_user}}"><i class="feather icon-trash"></i></a>
+                                                                                data-original-title="delete" data-url="{{url('data-user/'.$data->id)}}" data-id="{{$data->id}}"><i class="feather icon-trash"></i></a>
                                                                             </div>
                                                                         </td>    
                                                                         @endif

@@ -379,7 +379,7 @@ class KlasifikasiController extends Controller
     function simpan_data(Request $request){
         date_default_timezone_set('Asia/Jakarta');
         $id_anak        = $request->id_anak;
-        $id_user        = $request->session()->get('id_user');
+        $id        = $request->session()->get('id');
         $tgl_lahir      = $request->tgl_lahir;
         $awal           = date_create($tgl_lahir);
         $akhir          = date_create(); // waktu sekarang
@@ -398,7 +398,7 @@ class KlasifikasiController extends Controller
         $z_imtpu        = $request->zscore_imtu;
         $hasil = [
             'id_anak'       => $id_anak,
-            'id_user'       => $id_user,
+            'id'       => $id,
             'umur'          => $umur,
             'tanggal'       => date("Y-m-d"),
             'bb'            => $bb,

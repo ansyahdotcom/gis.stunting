@@ -38,7 +38,7 @@ class PetasebaranController extends Controller
                 "))
             ->join('tbl_anak', 'hasil_zscore.id_anak', '=', 'tbl_anak.id_anak')
             ->join('tbl_desa', 'tbl_anak.id_desa', '=', 'tbl_desa.id_desa')
-            ->join('users', 'hasil_zscore.id_user', '=', 'users.id_user')
+            ->join('users', 'hasil_zscore.id', '=', 'users.id')
             ->groupby('nama_desa', 'longtd', 'latd')
             ->get();
         return view('content/main/peta-sebaran_luar', $data);
@@ -75,7 +75,7 @@ class PetasebaranController extends Controller
                                     "))
                                 ->join('tbl_anak', 'hasil_zscore.id_anak', '=', 'tbl_anak.id_anak')
                                 ->join('tbl_desa', 'tbl_anak.id_desa', '=', 'tbl_desa.id_desa')
-                                ->join('users', 'hasil_zscore.id_user', '=', 'users.id_user')
+                                ->join('users', 'hasil_zscore.id', '=', 'users.id')
                                 ->groupby('nama_desa', 'longtd', 'latd')
                                 ->get();
         return view('content/main/peta-sebaran', $data);
