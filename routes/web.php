@@ -61,4 +61,5 @@ Route::resource('/article', ArticleController::class);
 // video
 Route::resource('/dashboard/video', DashboardVideoController::class);
 Route::post('/dashboard/video/post/{title}', [DashboardVideoController::class, 'post']);
+Route::post('/dashboard/video/deleteVideo/{title}', [DashboardVideoController::class, 'deleteVideo']);
 Route::resource('/video', VideoController::class);

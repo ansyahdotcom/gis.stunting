@@ -57,7 +57,7 @@ class DashboardVideoController extends Controller
         $validatedData = $request->validate([
             'title' => 'required',
             'thumbnail' => 'required|image|file|max:3000|mimes:jpeg,png,jpg',
-            'video_file' => 'file|max:100000|mimes:mp4,mkv',
+            'video_file' => 'file|max:50000|mimes:mp4,mkv',
         ]);
         $validatedData['title'] = str_replace(' ', '_', $request->title);
         $validatedData['video_link'] = $request->video_link;
@@ -166,58 +166,64 @@ class DashboardVideoController extends Controller
         $validatedData = $request->validate([
             'title' => 'required',
             'thumbnail' => 'image|file|max:3000|mimes:jpeg,png,jpg',
-            'video_file' => 'file|max:100000|mimes:mp4,mkv',
         ]);
-        // isi data di $validatedData
+        // isi title di $validatedData
         $validatedData['title'] = str_replace(' ', '_', $request->title);
-        $validatedData['video_link'] = $request->video_link;
+        // cek data
+        $where = Video::where('id', '=', $request->id)->limit(1)->get();
+        foreach ($where as $wh) {
+            $video_link = $wh->video_link;
+            $video_file = $wh->video_file;
+        }
 
-        // get value from uploaded file
-        $video_link = $request->video_link;
-        $video_file = $request->file('video_file');
-
-        // validasi video
-        // jika semua sumber kosong
-        if($video_file == NULL && $video_link == NULL) {
-            $request->session()->flash('message', 'notNullVideo');
+        // JIKA ADA 1 VIDEO DENGAN 2 SUMBER
+        if($request->video_link != null && $request->video_file != null) {
+            $request->session()->flash('message', 'failedSaveVideo');
             return redirect('/dashboard/video/' . $video->title . '/edit');
 
-        // jika yang berisi hanya video file
-        } else if($video_file != NULL && $video_link == NULL) {
-            // get name from file video
-            $video_file = $request->file('video_file')->getClientOriginalName();
-            // save thumbnail video to storage
+        // JIKA SUMBER VIDEO DARI LINK
+        } elseif ($request->video_link != $video_link && $request->video_file == null) {
+            // HAPUS FILE VIDEO JIKA ADA
+            if($request->old_video_file) {
+                Storage::delete($request->old_video_file);
+            }
+            $validatedData['video_file'] = null;
+            $validatedData['video_link'] = $request->video_link;
+
+            // update image
             if($request->file('thumbnail')) {
-                // delete old thumbnail
+                // delete old image
                 if($request->old_thumbnail) {
                     Storage::delete($request->old_thumbnail);
                 }
                 $validatedData['thumbnail'] = $request->file('thumbnail')->store('thumbnail_video');
             }
-            // save file video to storage
+
+            // save data
+            $save = Video::where('id', $request->id)->update($validatedData);
+            if ($save) {
+                $request->session()->flash('message', 'edit');
+                return redirect('dashboard/video');
+            } else {
+                $request->session()->flash('message', 'failedit');
+                return redirect('/dashboard/video/' . $video->title . '/edit');
+            }
+
+        // JIKA SUMBER VIDEO DARI FILE
+        } elseif ($request->video_link == null && $request->video_file != $video_file) {
+            // update video
             if($request->file('video_file')) {
-                // delete old video_file
+                // delete old video
                 if($request->old_video_file) {
                     Storage::delete($request->old_video_file);
                 }
                 $validatedData['video_file'] = $request->file('video_file')->store('video_file');
-            }
-            
-            // save data
-            $save = Video::where('id', $request->id)->update($validatedData);
-            if ($save) {
-                $request->session()->flash('message', 'save');
-                return redirect('dashboard/video');
-            } else {
-                $request->session()->flash('message', 'failsave');
-                return redirect('/dashboard/video/' . $video->title . '/edit');
+                $validatedData['video_link'] = null;
             }
 
-        // jika yang berisi hanya link video
-        } else if($video_file == NULL && $video_link != NULL) {
-            // save thumbnail video to storage
+            // update image
             if($request->file('thumbnail')) {
-                // delete old thumbnail
+                // delete old image
                 if($request->old_thumbnail) {
                     Storage::delete($request->old_thumbnail);
                 }
@@ -227,22 +233,32 @@ class DashboardVideoController extends Controller
             // save data
             $save = Video::where('id', $request->id)->update($validatedData);
             if ($save) {
-                $request->session()->flash('message', 'save');
+                $request->session()->flash('message', 'edit');
                 return redirect('dashboard/video');
             } else {
-                $request->session()->flash('message', 'failsave');
+                $request->session()->flash('message', 'failedit');
                 return redirect('/dashboard/video/' . $video->title . '/edit');
             }
 
-        // jika berisi keduanya
-        } else if($video_link != NULL && $video_file != NULL) {
-            $request->session()->flash('message', 'failedSaveVideo');
-            return redirect('/dashboard/video/' . $video->title . '/edit');
-
-        // jika gagal
+        // JIKA HANYA MENGUBAH JUDUL DAN THUMBNAIL
         } else {
-            $request->session()->flash('message', 'failsave');
-            return redirect('/dashboard/video/' . $video->title . '/edit');
+            // update image
+            if($request->file('thumbnail')) {
+                // delete old image
+                if($request->old_thumbnail) {
+                    Storage::delete($request->old_thumbnail);
+                }
+                $validatedData['thumbnail'] = $request->file('thumbnail')->store('thumbnail_video');
+            }
+
+            $save = Video::where('id', $request->id)->update($validatedData);
+            if ($save) {
+                $request->session()->flash('message', 'edit');
+                return redirect('dashboard/video');
+            } else {
+                $request->session()->flash('message', 'failedit');
+                return redirect('/dashboard/video/' . $video->title . '/edit');
+            }
         }
     }
 

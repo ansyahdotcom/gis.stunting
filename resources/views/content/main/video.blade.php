@@ -62,7 +62,7 @@
                                                     <td>
                                                         {{-- button preview --}}
                                                         
-                                                        <a href="{{ $data->video_link != null ? $data->video_link : 'storage/'.$data->video_file }}" data-caption="" type="button" class="btn btn-primary btn-sm border-0 waves-effect waves-light lightbox-image" data-toggle="tooltip"
+                                                        <a href="{{ $data->video_link != null ? $data->video_link : '/storage/'.$data->video_file }}" data-caption="" type="button" class="btn btn-primary btn-sm border-0 waves-effect waves-light lightbox-image" data-toggle="tooltip"
                                                         data-placement="top"  data-original-title="Pratinjau"><i class="feather icon-eye"></i></a>
                                                         {{-- button edit --}}
                                                         <a href="/dashboard/video/{{ $data->title }}/edit" type="button" class="btn btn-warning btn-sm border-0 waves-effect waves-light" data-toggle="tooltip"

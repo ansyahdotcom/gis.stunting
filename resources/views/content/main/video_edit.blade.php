@@ -1,5 +1,6 @@
 @extends('parts.main.admin.master')
 @section('content')
+<div class="flash-data" data-flashdata="<?= session()->get('message') ?>"></div>
 <div class="pcoded-content">
     <div class="pcoded-inner-content">
         <div class="main-body">
@@ -73,12 +74,12 @@
                                         <div class="form-group row">
                                             <label for="video_file" class="col-sm-2 col-form-label">Upload File Video</label>
                                             <div class="col-sm-12">
-                                                <input type="file" name="video_file" id="video_file" value="{{ $video->video_file, old('video_file') }}"
+                                                <input type="file" name="video_file" id="video_file" value="{{ old('video_file') }}"
                                                 class="form-control @error('video_file') is-invalid @enderror">
                                                 @error('video_file')
                                                 <span class="text-danger mb-2">{{ $message }}</span>
                                                 @enderror
-                                                <input type="text" name="video_file" value="{{ $video->video_file }}" class="form-control" readonly>
+                                                <input type="text" name="video_file2" value="{{ $video->video_file ? $video->video_file : 'Tidak ada file video' }}" class="form-control" readonly>
                                                 <input type="hidden" name="old_video_file" value="{{ $video->video_file }}">
                                             </div>
                                         </div>
