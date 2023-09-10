@@ -1,3 +1,19 @@
+// show image when insert
+function previewImage(){
+    const image = document.querySelector('#img');
+    const imgPreview = document.querySelector('.img-preview');
+
+    imgPreview.style.margin = '20px auto';
+
+    const ofReader = new FileReader();
+    ofReader.readAsDataURL(image.files[0]);
+
+    ofReader.onload = function(oFREvent) {
+        imgPreview.src = oFREvent.target.result;
+    }
+}
+    
+
 "use strict";
 $(document).ready(function() {
     var $window = $(window);

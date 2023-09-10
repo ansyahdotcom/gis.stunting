@@ -1427,7 +1427,8 @@
     text-transform: capitalize;
     font-size: 15px;
     padding: 10px 19px;
-    cursor: pointer
+    cursor: pointer;
+    border: 0;
 }
 
 .close {
@@ -1473,7 +1474,7 @@
 }
 
 .btn i {
-    margin-right: 5px
+    /* margin-right: 5px */
 }
 
 .btn.btn-icon {
@@ -25815,4 +25816,19 @@ span.value {
 .done-task .captions {
     color: #919aa3;
     text-decoration: line-through
+}
+
+.modal p {
+    font-size: 15px;
+}
+
+.imgboxInsert {
+    display: relative;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.imgboxInsert img {
+    display: relative;
+    max-width: 300px;
 }

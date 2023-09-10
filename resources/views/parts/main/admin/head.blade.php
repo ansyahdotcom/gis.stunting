@@ -21,6 +21,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
     <!-- Required Fremwork -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/bower_components/bootstrap/css/bootstrap.min.css')}}">
+    <script type="text/javascript" src="cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- feather Awesome -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/assets/icon/feather/css/feather.css')}}">
     <!-- themify-icons line icon -->
@@ -35,7 +36,8 @@
     <link rel="stylesheet" type="text/css"
         href="{{asset('assets/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')}}">
     <!-- sweet alert framework -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/bower_components/sweetalert/css/sweetalert.css')}}">
+    {{-- <link rel="stylesheet" type="text/css" href="{{asset('assets/bower_components/sweetalert/css/sweetalert.css')}}"> --}}
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/assets/css/sweetalert2.min.css')}}">
     <!-- animation nifty modal window effects css -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/assets/css/component.css')}}">
     <!-- Select 2 css -->
@@ -56,7 +58,13 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets\assets\css\style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets\assets\css\jquery.mCustomScrollbar.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets\assets\css\pcoded-horizontal.min.css')}}">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    {{-- JQuery --}}
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    {{-- Fancy box --}}
+    <link href="{{ asset('assets/assets/css/jquery.fancybox.min.css') }}" rel="stylesheet">
+    {{-- Trix Editor --}}
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
+    <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
     <!-- Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
