@@ -16,42 +16,42 @@
     <meta name="author" content="#">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <!-- Favicon icon -->
-    <link rel="icon" href="{{asset('assets\assets\images\logo-poltek.ico')}}" type="image/x-icon">
+    <link rel="icon" href="{{asset('assets/assets/images/logo-poltek.ico')}}" type="image/x-icon">
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
     <!-- Required Fremwork -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets\bower_components\bootstrap\css\bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/bower_components/bootstrap/css/bootstrap.min.css')}}">
     <!-- feather Awesome -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets\assets\icon\feather\css\feather.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/assets/icon/feather/css/feather.css')}}">
     <!-- themify-icons line icon -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets\assets\icon\themify-icons\themify-icons.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/assets/icon/themify-icons/themify-icons.css')}}">
     <!-- Syntax highlighter Prism css -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets\assets\pages\prism\prism.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/assets/pages/prism/prism.css')}}">
     <!-- Data Table Css -->
     <link rel="stylesheet" type="text/css"
-        href="{{asset('assets\bower_components\datatables.net-bs4\css\dataTables.bootstrap4.min.css')}}">
+        href="{{asset('assets/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}">
     <link rel="stylesheet" type="text/css"
-        href="{{asset('assets\assets\pages\data-table\css\buttons.dataTables.min.css')}}">
+        href="{{asset('assets/assets/pages/data-table/css/buttons.dataTables.min.css')}}">
     <link rel="stylesheet" type="text/css"
-        href="{{asset('assets\bower_components\datatables.net-responsive-bs4\css\responsive.bootstrap4.min.css')}}">
+        href="{{asset('assets/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')}}">
     <!-- sweet alert framework -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/bower_components/sweetalert/css/sweetalert.css')}}">
     <!-- animation nifty modal window effects css -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/assets/css/component.css')}}">
     <!-- Select 2 css -->
-    <link rel="stylesheet" href="{{asset('assets\bower_components/select2/css/select2.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/bower_components/select2/css/select2.min.css')}}" />
     <!-- Multi Select css -->
     <link rel="stylesheet" type="text/css"
-        href="{{asset('assets\bower_components/bootstrap-multiselect/css/bootstrap-multiselect.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset('assets\bower_components/multiselect/css/multi-select.css')}}" />
+        href="{{asset('assets/bower_components/bootstrap-multiselect/css/bootstrap-multiselect.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/bower_components/multiselect/css/multi-select.css')}}" />
     <!-- hover-effect.css -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets\assets/pages/hover-effect/normalize.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets\assets/pages/hover-effect/set2.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/assets/pages/hover-effect/normalize.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/assets/pages/hover-effect/set2.css')}}">
     <!-- owl carousel css -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets\bower_components/owl.carousel/css/owl.carousel.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets\bower_components/owl.carousel/css/owl.theme.default.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/bower_components/owl.carousel/css/owl.carousel.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/bower_components/owl.carousel/css/owl.theme.default.css')}}">
     <!-- swiper css -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets\bower_components/swiper/css/swiper.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/bower_components/swiper/css/swiper.min.css')}}">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets\assets\css\style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets\assets\css\jquery.mCustomScrollbar.css')}}">
@@ -84,5 +84,11 @@
     <!-- TODO: Add SDKs for Firebase products that you want to use
         https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-analytics.js"></script>
+
+    <style>
+        trix-toolbar [data-trix-button-group="file-tools"] {
+            display: none;
+        }
+    </style>
     
 </head>

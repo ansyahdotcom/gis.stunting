@@ -1,18 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\PetasebaranController;
-use App\Http\Controllers\KlasifikasiController;
+use App\Http\Controllers\DesaController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DataAnakController;
 use App\Http\Controllers\DataBBpUController;
 use App\Http\Controllers\DataTBpUController;
+use App\Http\Controllers\DataUserController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataBBpTBController;
 use App\Http\Controllers\DataIMTpUController;
-use App\Http\Controllers\DataAnakController;
-use App\Http\Controllers\DataUserController;
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DataZscoreController;
-use App\Http\Controllers\DesaController;
+use App\Http\Controllers\KlasifikasiController;
+use App\Http\Controllers\PetasebaranController;
+use App\Http\Controllers\DashboardArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,3 +50,7 @@ Route::post('/simpan_data', [KlasifikasiController::class, 'simpan_data']);
 Route::resource('data-anak', DataAnakController::class);
 Route::resource('data-user', DataUserController::class);
 Route::resource('data-desa', DesaController::class);
+
+// artikel
+Route::resource('/dashboard/article', DashboardArticleController::class);
+Route::post('/dashboard/article/post/{title}', [DashboardArticleController::class, 'post']);

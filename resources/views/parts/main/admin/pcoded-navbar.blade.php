@@ -1,11 +1,7 @@
                 <nav class="pcoded-navbar">
                     <div class="pcoded-inner-navbar">
                         <ul class="pcoded-item pcoded-left-item">
-                            @if(Request::segment(1) == "dashboard")
-                            <li class="pcoded-hasmenu {{ Request::is('dashboard') ? 'active' : 'active' }}">
-                                @else
-                            <li class="pcoded-hasmenu">
-                                @endif
+                            <li class="pcoded-hasmenu {{ Request::is('dashboard') ? 'active' : '' }}">
                                 <a href="javascript:void(0)">
                                     <span class="pcoded-micon"><i class="feather icon-home"></i></span>
                                     <span class="pcoded-mtext">Home</span>
@@ -27,11 +23,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            @if (Request::segment(1) == "peta-sebaran")
-                            <li class="pcoded-hasmenu {{ Request::is('peta-sebaran') ? 'active' : 'active' }}">
-                                @else
-                            <li class="pcoded-hasmenu">    
-                            @endif
+                            <li class="pcoded-hasmenu {{ Request::is('peta-sebaran-stunting', 'peta-sebaran-stunting/*') ? 'active' : '' }}">
                                 <a href="javascript:void(0)">
                                     <span class="pcoded-micon"><i class="feather icon-map"></i></span>
                                     <span class="pcoded-mtext">Peta</span>
@@ -47,11 +39,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            @if (Request::segment(1) == "zscore")
-                            <li class="pcoded-hasmenu {{ Request::is('zscore') ? 'active' : 'active' }}">
-                                @else
-                            <li class="pcoded-hasmenu">    
-                            @endif
+                            <li class="pcoded-hasmenu {{ Request::is('zscore', 'zscore/*') ? 'active' : '' }}">
                                 <a href="javascript:void(0)">
                                     <span class="pcoded-micon"><i class="feather icon-clipboard"></i></span>
                                     <span class="pcoded-mtext">Klasifikasi</span>
@@ -67,19 +55,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            @if (Request::segment(1) == "data_bbu")
-                            <li class="pcoded-hasmenu {{ Request::is('data_bbu') ? 'active' : 'active' }}">
-                                @elseif (Request::segment(1) == "data_tbu")
-                            <li class="pcoded-hasmenu {{ Request::is('data_tbu') ? 'active' : 'active' }}">
-                                @elseif (Request::segment(1) == "data_bbtb")
-                            <li class="pcoded-hasmenu {{ Request::is('data_bbtb') ? 'active' : 'active' }}">
-                                @elseif (Request::segment(1) == "data_imtu")
-                            <li class="pcoded-hasmenu {{ Request::is('data_imtu') ? 'active' : 'active' }}">
-                                @elseif (Request::segment(1) == "data_anak")
-                            <li class="pcoded-hasmenu {{ Request::is('data_anak') ? 'active' : 'active' }}">
-                                @else
-                            <li class="pcoded-hasmenu">    
-                            @endif
+                            <li class="pcoded-hasmenu {{ Request::is('data-anak', 'data-desa', 'data-riwayat', 'data-anak/*', 'data-desa/*', 'data-riwayat/*') ? 'active' : '' }}">
                                 <a href="javascript:void(0)">
                                     <span class="pcoded-micon"><i class="feather icon-server"></i></span>
                                     <span class="pcoded-mtext">Data</span>
@@ -104,6 +80,29 @@
                                         <a href="/data-riwayat" data-i18n="nav.form-pickers.main">
                                             <span class="pcoded-micon"><i class="ti-pencil-alt"></i></span>
                                             <span class="pcoded-mtext">Data Zscore</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="pcoded-hasmenu {{ Request::is('dashboard/article', 'dashboard/article/*', 'dashboard/video', 'dashboard/video/*') ? 'active' : '' }}">
+                                <a href="javascript:void(0)">
+                                    <span class="pcoded-micon"><i class="feather icon-paperclip"></i></span>
+                                    <span class="pcoded-mtext">Media KIE</span>
+                                    <span class="pcoded-mcaret"></span>
+                                </a>
+                                <ul class="pcoded-submenu">
+                                    <li class=" ">
+                                        <a href="/dashboard/article">
+                                            <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
+                                            <span class="pcoded-mtext">Artikel</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="/dashboard/video">
+                                            <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
+                                            <span class="pcoded-mtext">Video</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>

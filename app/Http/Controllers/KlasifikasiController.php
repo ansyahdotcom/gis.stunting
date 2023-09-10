@@ -9,7 +9,7 @@ use App\Models\BBpPB;
 use App\Models\BBpTB;
 use App\Models\BBpU;
 use App\Models\IMTpU;
-use App\Models\PBpU;
+use App\Models\TBpU;
 
 class KlasifikasiController extends Controller
 {
