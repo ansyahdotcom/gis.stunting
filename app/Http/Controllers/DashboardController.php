@@ -69,7 +69,7 @@ class DashboardController extends Controller
         return view('content/landingpage/index', [
             'data' => $data,
             'article' => Article::where('posted', '=', '1')->latest()->limit(3)->get(),
-            // 'video' => Video::where('posted', '=', '1')->latest()->limit(3)->get()
+            'video' => Video::where('posted', '=', '1')->latest()->limit(3)->get()
         ]);
     }
 }

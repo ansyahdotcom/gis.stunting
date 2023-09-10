@@ -161,7 +161,7 @@
         </div>
     </div>
 </div>
-{{-- <div class="about-section no-color" id="video">
+<div class="about-section no-color" id="video">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 ">
@@ -170,18 +170,18 @@
                 </div>
                 @if ($video->count())
                 <div class="row">
-                    @foreach($video as $data)
+                    @foreach($video as $vdo)
                     <div class="col-md-4 col-sm-6 col-xs-12 video-column">
                         <div class="video-inner">
                             <figure class="image-box">
-                                <img src="storage/{{ $data->thumbnail }}" alt="">
+                                <img src="storage/{{ $vdo->thumbnail }}" alt="">
                             </figure>
                             <div class="video-btn">
-                                <a href="{{ $data->video_link != null ? $data->video_link : 'storage/'.$data->video_file }}" class="lightbox-image" data-caption=""></a>
+                                <a href="{{ $vdo->video_link != null ? $vdo->video_link : 'storage/'.$vdo->video_file }}" class="lightbox-image" data-caption=""></a>
                             </div>
                         </div>
                         <div class="title">
-                            <h4><a href="{{ $data->video_link }}" class="lightbox-image" data-caption="">{{ str_replace('_', ' ', $data->title) }}</a></h4>
+                            <h4><a href="{{ $vdo->video_link != null ? $vdo->video_link : 'storage/'.$vdo->video_file }}" class="lightbox-image" data-caption="">{{ str_replace('_', ' ', $vdo->title) }}</a></h4>
                         </div>
                     </div>
                     @endforeach
@@ -197,7 +197,7 @@
             </div>
         </div>
     </div>
-</div> --}}
+</div>
       
 <div class="flex-features" id="kontak">
     <div class="container">

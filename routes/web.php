@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DesaController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\VideoController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\DataAnakController;
 use App\Http\Controllers\DataBBpUController;
@@ -60,3 +61,4 @@ Route::resource('/article', ArticleController::class);
 // video
 Route::resource('/dashboard/video', DashboardVideoController::class);
 Route::post('/dashboard/video/post/{title}', [DashboardVideoController::class, 'post']);
+Route::resource('/video', VideoController::class);
