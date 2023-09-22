@@ -34,9 +34,6 @@
                                     </div>
                                 </div>
                                 
-                                {{-- <div id="styleSelector">
-                                    
-                                </div> --}}
                                 @php
                                     foreach ($desa as $key => $value) {
                                         echo $value->nama_desa;
@@ -45,7 +42,8 @@
                             </div>
                         </div>
                     </div>
-                    <script type="text/javascript" src="{{asset('assets/kalisat.js')}}"></script>
+                    {{-- <script type="text/javascript" src="{{asset('assets/kalisat.js')}}"></script> --}}
+                    <script type="text/javascript" src="{{asset('assets/kecamatan.js')}}"></script>
                     <script>
                         $(document).ready(function() {
 
