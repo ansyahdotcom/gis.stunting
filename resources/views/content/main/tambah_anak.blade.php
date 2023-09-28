@@ -26,31 +26,31 @@
                                                     <div class="card-block">
                                                         <hr>
                                                         <form method="post"
-                                                            action="{{ url('data-anak') }}"
+                                                            action="/dataanak"
                                                             accept-charset="UTF-8">
                                                             {{ csrf_field() }}
                                                             <div class="form-group row">
                                                                 <label class="col-sm-2 col-form-label">Nama Anak</label>
                                                                 <div class="col-sm-4">
                                                                     <input type="text" name="nama_anak" id="nama_anak"
-                                                                        class="form-control" placeholder="Nama Anak"
-                                                                        required>
+                                                                        class="form-control" placeholder="Nama Anak" value="{{ old('nama_anak') }}"
+                                                                        required autocomplete="off">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
                                                                 <label class="col-sm-2 col-form-label">Nama Ayah</label>
                                                                 <div class="col-sm-4">
                                                                     <input type="text" name="nama_ayah"
-                                                                        id="nama_ayah" class="form-control"
-                                                                        placeholder="Nama Ayah Kandung" required>
+                                                                        id="nama_ayah" class="form-control" value="{{ old('nama_ayah') }}"
+                                                                        placeholder="Nama Ayah Kandung" required autocomplete="off">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
                                                                 <label class="col-sm-2 col-form-label">Nama Ibu</label>
                                                                 <div class="col-sm-4">
                                                                     <input type="text" name="nama_ibu"
-                                                                        id="nama_ibu" class="form-control"
-                                                                        placeholder="Nama Ibu Kandung" required>
+                                                                        id="nama_ibu" class="form-control" value="{{ old('nama_ibu') }}"
+                                                                        placeholder="Nama Ibu Kandung" required autocomplete="off">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
@@ -75,29 +75,29 @@
                                                             </div>
                                                             <hr>
                                                             <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Kelurahan / Desa</label>
+                                                                <label class="col-sm-2 col-form-label">Kecamatan</label>
                                                                     <div class="col-sm-4">
-                                                                        <select name="desa" id="desa"
-                                                                        class="js-example-placeholder-multiple col-sm-12" placeholder="Kelurahan / Desa" required>
+                                                                        <select name="id_kcm" id="id_kcm"
+                                                                        class="js-example-placeholder-multiple col-sm-12" placeholder="Kecamatan" required>
                                                                         <option value="&nbsp">--Pilih--</option>
-                                                                        @foreach ($dataset as $item)
-                                                                        <option value="{{$item->id_desa}}">{{$item->nama_desa}}</option>
+                                                                        @foreach ($kecamatan as $item)
+                                                                        <option value="{{$item->id_kcm}}">{{$item->nama_kcm}}</option>
                                                                         @endforeach
                                                                     </select>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Dusun </label>
+                                                                <label class="col-sm-2 col-form-label">Kelurahan/Desa </label>
                                                                 <div class="col-sm-4">
                                                                     <input type="text" name="dusun"
-                                                                        id="dusun" class="form-control"
-                                                                        placeholder="Dusun" required>
+                                                                        id="dusun" class="form-control" value="{{ old('dusun') }}"
+                                                                        placeholder="Kelurahan/Desa" required>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
                                                                 <label class="col-sm-2 col-form-label">Rt </label>
                                                                 <div class="col-sm-4">
-                                                                    <input type="text" name="rt"
+                                                                    <input type="text" name="rt" value="{{ old('rt') }}"
                                                                         id="rt" class="form-control"
                                                                         placeholder="Rt" required>
                                                                 </div>
@@ -105,7 +105,7 @@
                                                             <div class="form-group row">
                                                                 <label class="col-sm-2 col-form-label">Rw</label>
                                                                 <div class="col-sm-4">
-                                                                    <input type="text" name="rw"
+                                                                    <input type="text" name="rw" value="{{ old('rw') }}"
                                                                         id="rw" class="form-control"
                                                                         placeholder="Rw" required>
                                                                 </div>
@@ -113,7 +113,7 @@
                                                             <div class="form-group row">
                                                                 <label class="col-sm-2 col-form-label">Posyandu</label>
                                                                 <div class="col-sm-4">
-                                                                    <input type="text" name="posyandu"
+                                                                    <input type="text" name="posyandu" value="{{ old('posyandu') }}"
                                                                         id="posyandu" class="form-control"
                                                                         placeholder="posyandu" required>
                                                                 </div>

@@ -51,7 +51,7 @@ Route::post('/simpan_anak', [DataAnakController::class, 'simpan']);
 Route::post('/get_anak', [KlasifikasiController::class, 'ajax_get']);
 Route::post('/simpan_data', [KlasifikasiController::class, 'simpan_data']);
 
-Route::resource('data-anak', DataAnakController::class);
+Route::resource('dataanak', DataAnakController::class);
 Route::resource('data-user', DataUserController::class);
 Route::resource('data-desa', DesaController::class);
 

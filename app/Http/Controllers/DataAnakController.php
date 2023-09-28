@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\DataAnak;
 use App\Models\DataDesa;
+use App\Models\Kecamatan;
+use Illuminate\Support\Facades\DB;
 
 class DataAnakController extends Controller
 {
@@ -23,8 +25,8 @@ class DataAnakController extends Controller
             # code...
             return redirect('/dashboard-admin');
         };
-        $data['dataset'] =  DataAnak::join('tbl_desa', 'tbl_anak.id_desa', '=', 'tbl_desa.id_desa')
-                ->select('tbl_anak.*', 'tbl_desa.nama_desa')    
+        $data['dataset'] =  DataAnak::join('kecamatans', 'tbl_anak.id_kcm', '=', 'kecamatans.id_kcm')
+                ->select('tbl_anak.*', 'kecamatans.nama_kcm')    
                 ->get();
         return view("content/main/data_anak", $data);
     }
@@ -42,7 +44,9 @@ class DataAnakController extends Controller
             # code...
             return redirect('/dashboard-admin');
         };
-        $data['dataset'] =  DataDesa::all();
+        $data = [
+            'kecamatan' => Kecamatan::all()
+        ];
         return view("content/main/tambah_anak", $data);
     }
 
@@ -59,7 +63,7 @@ class DataAnakController extends Controller
         $jenis_kelamin      = $request->jenis_kelamin;
         
         date_default_timezone_set('Asia/Jakarta');
-        $query = DataAnak::select(\DB::raw("max(RIGHT(tbl_anak.id_anak,3)) As id_anak"))
+        $query = DataAnak::select(DB::raw("max(RIGHT(tbl_anak.id_anak,3)) As id_anak"))
         ->where('jenis_kelamin', $jenis_kelamin)
         ->get();
         if (intVal($query[0]->id_anak) > 0) {
@@ -77,7 +81,7 @@ class DataAnakController extends Controller
         $model->nama_ibu            = $request->nama_ibu;
         $model->jenis_kelamin       = $jenis_kelamin;
         $model->tgl_lahir           = $request->tgl_lahir;
-        $model->id_desa             = $request->desa;
+        $model->id_kcm              = $request->id_kcm;
         $model->dusun               = $request->dusun;
         $model->rt                  = $request->rt;
         $model->rw                  = $request->rw;
@@ -86,8 +90,11 @@ class DataAnakController extends Controller
 
         $insert = $model->save();
         if ($insert) {
-            # code...
-            return redirect('data-anak');
+            $request->session()->flash('message', 'save');
+            return redirect('dataanak');
+        } else {
+            $request->session()->flash('message', 'failsave');
+            return redirect('dataanak/create');
         }
     }
 
@@ -119,7 +126,7 @@ class DataAnakController extends Controller
             return redirect('/dashboard-admin');
         };
         $data['anak']       = DataAnak::find($id);
-        $data['dataset']    =  DataDesa::all();
+        $data['kcm']        = Kecamatan::all();
         return view("content/main/edit_anak", $data);
     }
 
@@ -137,7 +144,7 @@ class DataAnakController extends Controller
         $jenis_kelamin      = $request->jenis_kelamin;
         $jk_ori             = $request->jk_ori;
         date_default_timezone_set('Asia/Jakarta');
-        $query = DataAnak::select(\DB::raw("max(RIGHT(tbl_anak.id_anak,3)) As id_anak"))
+        $query = DataAnak::select(DB::raw("max(RIGHT(tbl_anak.id_anak,3)) As id_anak"))
         ->where('jenis_kelamin', $jenis_kelamin)
         ->get();
         if (intVal($query[0]->id_anak) > 0) {
@@ -158,17 +165,19 @@ class DataAnakController extends Controller
         $model->nama_ibu            = $request->nama_ibu;
         $model->jenis_kelamin       = $jenis_kelamin;
         $model->tgl_lahir           = $request->tgl_lahir;
-        $model->id_desa             = $request->desa;
+        $model->id_kcm              = $request->id_kcm;
         $model->dusun               = $request->dusun;
         $model->rt                  = $request->rt;
         $model->rw                  = $request->rw;
         $model->posyandu            = $request->posyandu;
 
-        // print_r($model);
         $insert = $model->save();
         if ($insert) {
-            # code...
-            return redirect('data-anak');
+            $request->session()->flash('message', 'edit');
+            return redirect('dataanak');
+        } else {
+            $request->session()->flash('message', 'failedit');
+            return redirect('dataanak/'.$id.'/edit');
         }
     }
 
@@ -178,8 +187,16 @@ class DataAnakController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id_anak)
     {
-        //
+        // delete data
+        $delete = DB::table('tbl_anak')->where('id_anak', '=', $id_anak)->delete();
+        if($delete) {
+            $request->session()->flash('message', 'delete');
+            return redirect('/dataanak');
+        } else {
+            $request->session()->flash('message', 'notdelete');
+            return redirect('/dataanak');
+        }
     }
 }

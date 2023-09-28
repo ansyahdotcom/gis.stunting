@@ -14,7 +14,7 @@
                                             <div class="col-xl-10 col-md-12">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <h5>Edit Data Anak</h5>
+                                                        <h5>Ubah Data Anak</h5>
                                                         <div class="card-header-right">
                                                             <ul class="list-unstyled card-option">
                                                                 <li><i class="feather icon-maximize full-card"></i></li>
@@ -26,9 +26,10 @@
                                                     <div class="card-block">
                                                         <hr>
                                                         <form method="post"
-                                                            action="{{ url('data-anak/'. $anak->id_anak) }}"
+                                                            action="/dataanak/{{ $anak->id_anak }}"
                                                             accept-charset="UTF-8">
-                                                            {{ csrf_field() }}
+                                                            @method('put')
+                                                            @csrf
                                                             <div class="form-group row">
                                                                 <label class="col-sm-2 col-form-label">Nama Anak</label>
                                                                 <div class="col-sm-4">
@@ -78,24 +79,23 @@
                                                             </div>
                                                             <hr>
                                                             <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Kelurahan / Desa</label>
+                                                                <label class="col-sm-2 col-form-label">Kecamatan</label>
                                                                     <div class="col-sm-4">
-                                                                        <select name="desa" id="desa"
-                                                                        class="js-example-placeholder-multiple col-sm-12" placeholder="Kelurahan / Desa" required>
+                                                                        <select name="id_kcm" id="id_kcm"
+                                                                        class="js-example-placeholder-multiple col-sm-12" placeholder="Kecamatan" required>
                                                                         <option value="&nbsp">--Pilih--</option>
-                                                                        @foreach ($dataset as $item)
-                                                                        @if ($anak->id_desa == $item->id_desa)
-                                                                        <option value="{{$item->id_desa}}" selected>{{$item->nama_desa}}</option>
+                                                                        @foreach ($kcm as $item)
+                                                                        @if ($anak->id_kcm == $item->id_kcm)
+                                                                        <option value="{{$item->id_kcm}}" selected>{{$item->nama_kcm}}</option>
                                                                         @else
-                                                                        <option value="{{$item->id_desa}}">{{$item->nama_desa}}</option>
-                                                                            
+                                                                        <option value="{{$item->id_kcm}}">{{$item->nama_kcm}}</option>
                                                                         @endif
                                                                         @endforeach
                                                                     </select>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Dusun </label>
+                                                                <label class="col-sm-2 col-form-label">Kelurahan/Desa </label>
                                                                 <div class="col-sm-4">
                                                                     <input type="text" name="dusun"
                                                                         id="dusun" class="form-control"
