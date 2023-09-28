@@ -162,7 +162,16 @@ return [
         'video_file' => [
             'max' => 'Ukuran file tidak boleh lebih dari 50 MB!',
             'mimes' => 'File yang diupload harus .mp4, .mkv!'
-        ]
+        ],
+        'nama_kcm' => [
+            'required' => 'Nama kecamatan harus diisi!'
+        ],
+        'longtd_kcm' => [
+            'required' => 'Koordinat longitude harus diisi!'
+        ],
+        'latd_kcm' => [
+            'required' => 'Koordinat latitude harus diisi!'
+        ],
     ],
 
     /*

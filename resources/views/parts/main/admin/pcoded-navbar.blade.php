@@ -55,7 +55,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="pcoded-hasmenu {{ Request::is('data-anak', 'data-desa', 'data-riwayat', 'data-anak/*', 'data-desa/*', 'data-riwayat/*') ? 'active' : '' }}">
+            <li class="pcoded-hasmenu {{ Request::is('data-anak', 'kecamatan', 'data-desa', 'data-riwayat', 'data-anak/*', 'kecamatan/*', 'data-desa/*', 'data-riwayat/*') ? 'active' : '' }}">
                 <a href="javascript:void(0)">
                     <span class="pcoded-micon"><i class="feather icon-server"></i></span>
                     <span class="pcoded-mtext">Data</span>
@@ -66,6 +66,13 @@
                         <a href="/data-anak" data-i18n="nav.form-components.main">
                             <span class="pcoded-micon"><i class="ti-layers"></i></span>
                             <span class="pcoded-mtext">Data Anak</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                    <li class=" ">
+                        <a href="/kecamatan" data-i18n="nav.form-components.main">
+                            <span class="pcoded-micon"><i class="ti-layers"></i></span>
+                            <span class="pcoded-mtext">Data Kecamatan</span>
                             <span class="pcoded-mcaret"></span>
                         </a>
                     </li>

@@ -12,6 +12,7 @@ use App\Http\Controllers\DataUserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataBBpTBController;
 use App\Http\Controllers\DataIMTpUController;
+use App\Http\Controllers\KecamatanController;
 use App\Http\Controllers\DataZscoreController;
 use App\Http\Controllers\KlasifikasiController;
 use App\Http\Controllers\PetasebaranController;
@@ -63,3 +64,5 @@ Route::resource('/dashboard/video', DashboardVideoController::class);
 Route::post('/dashboard/video/post/{title}', [DashboardVideoController::class, 'post']);
 Route::post('/dashboard/video/deleteVideo/{title}', [DashboardVideoController::class, 'deleteVideo']);
 Route::resource('/video', VideoController::class);
+// kecamatan
+Route::resource('/kecamatan', KecamatanController::class);
