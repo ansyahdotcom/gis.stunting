@@ -50,17 +50,17 @@
                                                                     @foreach($dataset as $data)
                                                                     <tr>
                                                                         <td>{{$n++}}</td>
-                                                                        <td>{{$data->nama_desa}}</td>
+                                                                        <td>{{$data->nama_kcm}}</td>
                                                                         <td>{{$data->longtd}}</td>
                                                                         <td>{{$data->latd}}</td>
                                                                         <td>
                                                                             <div class="btn-group " role="group">
-                                                                                <a href="{{url('data-desa/'.$data->id_desa.'/edit')}}" type="button" class="btn btn-warning btn-sm waves-effect waves-light" data-toggle="tooltip"
+                                                                                <a href="{{url('data-desa/'.$data->id_kcm.'/edit')}}" type="button" class="btn btn-warning btn-sm waves-effect waves-light" data-toggle="tooltip"
                                                                                 data-placement="top" title=""
                                                                                 data-original-title="Update"><i class="feather icon-edit-2"></i></a>
                                                                                 <a href="javascript:void(0)" class="btn btn-danger btn-sm waves-effect waves-light button" id="delete" data-toggle="tooltip"
                                                                                 data-placement="top" title=""
-                                                                                data-original-title="delete" data-url="{{url('data-desa/'.$data->id_desa)}}" data-id="{{$data->id_desa}}"><i class="feather icon-trash"></i></a>
+                                                                                data-original-title="delete" data-url="{{url('data-desa/'.$data->id_kcm)}}" data-id="{{$data->id_kcm}}"><i class="feather icon-trash"></i></a>
                                                                             </div>
                                                                         </td>
                                                                     </tr>

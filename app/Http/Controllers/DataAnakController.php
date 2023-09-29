@@ -82,7 +82,7 @@ class DataAnakController extends Controller
         $model->jenis_kelamin       = $jenis_kelamin;
         $model->tgl_lahir           = $request->tgl_lahir;
         $model->id_kcm              = $request->id_kcm;
-        $model->dusun               = $request->dusun;
+        $model->kelurahan           = $request->kelurahan;
         $model->rt                  = $request->rt;
         $model->rw                  = $request->rw;
         $model->posyandu            = $request->posyandu;
@@ -166,7 +166,7 @@ class DataAnakController extends Controller
         $model->jenis_kelamin       = $jenis_kelamin;
         $model->tgl_lahir           = $request->tgl_lahir;
         $model->id_kcm              = $request->id_kcm;
-        $model->dusun               = $request->dusun;
+        $model->kelurahan           = $request->kelurahan;
         $model->rt                  = $request->rt;
         $model->rw                  = $request->rw;
         $model->posyandu            = $request->posyandu;

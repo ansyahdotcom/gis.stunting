@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class DataDesa extends Model
 {
     use HasFactory;
-    protected $table        = 'tbl_desa';
-    protected $primaryKey   = 'id_desa';
+    protected $table        = 'kecamatans';
+    protected $primaryKey   = 'id_kcm';
     public $keyType         = 'string';
     public $timestamps      = false;
 }

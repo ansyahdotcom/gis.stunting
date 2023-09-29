@@ -269,8 +269,7 @@
 </div>
 
 <!-- Main Section -->
-<script type="text/javascript" src="{{asset('assets/kalisat.js')}}"></script>
-{{-- <script type="text/javascript" src="{{asset('assets/landingpage.js')}}"></script> --}}
+<script type="text/javascript" src="{{asset('assets/kecamatan.js')}}"></script>
 <script>
     $(document).ready(function () {
 
@@ -295,12 +294,11 @@
 
         var stunting = L.layerGroup();
 
-        var data_desa = @json($data['desa']);
-        $.each(data_desa,function(index, value){
-            console.log('My array has at position ' + index + ', this value: ' + value.nama_desa + ', koordinat : ' + value.koordinat);
-            L.marker([value.longtd, value.latd])
+        var data_kecamatan = @json($kcm);
+        $.each(data_kecamatan,function(index, value){
+            L.marker([value.longtd_kcm, value.latd_kcm])
                 .addTo(stunting)
-                .bindPopup("<center>Desa : " + value.nama_desa + "</center><hr>" 
+                .bindPopup("<center>Kecamatan : " + value.nama_kcm + "</center><hr>" 
                 + "<table>"
                         +"<tbody>"
                         +"<tr>"

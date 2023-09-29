@@ -63,7 +63,7 @@
                 </a>
                 <ul class="pcoded-submenu">
                     <li class=" ">
-                        <a href="/data-anak" data-i18n="nav.form-components.main">
+                        <a href="/dataanak" data-i18n="nav.form-components.main">
                             <span class="pcoded-micon"><i class="ti-layers"></i></span>
                             <span class="pcoded-mtext">Data Anak</span>
                             <span class="pcoded-mcaret"></span>
@@ -73,13 +73,6 @@
                         <a href="/kecamatan" data-i18n="nav.form-components.main">
                             <span class="pcoded-micon"><i class="ti-layers"></i></span>
                             <span class="pcoded-mtext">Data Kecamatan</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
-                    <li class=" ">
-                        <a href="/data-desa" data-i18n="nav.form-components.main">
-                            <span class="pcoded-micon"><i class="ti-layers"></i></span>
-                            <span class="pcoded-mtext">Data Desa</span>
                             <span class="pcoded-mcaret"></span>
                         </a>
                     </li>

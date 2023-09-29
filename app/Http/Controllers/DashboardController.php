@@ -39,7 +39,7 @@ class DashboardController extends Controller
             # code...
             return redirect('/dashboard-admin');
         };
-        $data['desa']  =  HasilZscore::select(\DB::raw("nama_desa, longtd,latd,
+        $data =  HasilZscore::select(DB::raw("nama_kcm, longtd_kcm, latd_kcm,
                                     COUNT(CASE WHEN `bbpu` = 'Berat Badan Sangat Kurang' THEN 1 END) AS bb_sangat_kurang,
                                     COUNT(CASE WHEN `bbpu` = 'Berat Badan Kurang' THEN 1 END) AS bb_kurang,
                                     COUNT(CASE WHEN `bbpu` = 'Berat Badan Normal' THEN 1 END) AS bb_normal,
@@ -62,12 +62,12 @@ class DashboardController extends Controller
                                     COUNT(CASE WHEN `imtpu` = 'Obesitas' THEN 1 END) AS imtu_obesitas
                                     "))
                                 ->join('tbl_anak', 'hasil_zscore.id_anak', '=', 'tbl_anak.id_anak')
-                                ->join('tbl_desa', 'tbl_anak.id_desa', '=', 'tbl_desa.id_desa')
+                                ->join('kecamatans', 'tbl_anak.id_kcm', '=', 'kecamatans.id_kcm')
                                 ->join('users', 'hasil_zscore.id', '=', 'users.id')
-                                ->groupby('nama_desa', 'longtd', 'latd')
+                                ->groupby('nama_kcm', 'longtd_kcm', 'latd_kcm')
                                 ->get();
         return view('content/landingpage/index', [
-            'data' => $data,
+            'kcm' => $data,
             'article' => Article::where('posted', '=', '1')->latest()->limit(3)->get(),
             'video' => Video::where('posted', '=', '1')->latest()->limit(3)->get()
         ]);

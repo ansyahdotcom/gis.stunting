@@ -97,9 +97,9 @@
                                                             <div class="form-group row">
                                                                 <label class="col-sm-2 col-form-label">Kelurahan/Desa </label>
                                                                 <div class="col-sm-4">
-                                                                    <input type="text" name="dusun"
-                                                                        id="dusun" class="form-control"
-                                                                        placeholder="Dusun" value="{{$anak->dusun}}" required>
+                                                                    <input type="text" name="kelurahan"
+                                                                        id="kelurahan" class="form-control"
+                                                                        placeholder="Kelurahan/Desa" value="{{$anak->kelurahan}}" required>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">

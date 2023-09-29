@@ -25,7 +25,7 @@
                                                     </div>
                                                     <div class="card-block">
                                                         <hr>
-                                                        <form method="POST" action="{{ url('data-desa/'.$data->id_desa)}}"accept-charset="UTF-8">
+                                                        <form method="POST" action="{{ url('data-desa/'.$data->id_kcm)}}"accept-charset="UTF-8">
                                                             {{ csrf_field() }}
                                                             <div class="form-group row">
                                                                 <label class="col-sm-2 col-form-label">Nama desa</label>
@@ -33,8 +33,8 @@
                                                                     <input type="hidden" name="_method" id="_method"
                                                                         class="form-control" value="PATCH"
                                                                         required>
-                                                                    <input type="text" name="nama_desa" id="nama_desa"
-                                                                        class="form-control" placeholder="Contoh : Nama Desa" value="{{$data->nama_desa}}"
+                                                                    <input type="text" name="nama_kcm" id="nama_kcm"
+                                                                        class="form-control" placeholder="Contoh : Nama Desa" value="{{$data->nama_kcm}}"
                                                                         required>
                                                                 </div>
                                                             </div>

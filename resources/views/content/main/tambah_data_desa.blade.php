@@ -30,7 +30,7 @@
                                                             <div class="form-group row">
                                                                 <label class="col-sm-2 col-form-label">Nama desa</label>
                                                                 <div class="col-sm-4">
-                                                                    <input type="text" name="nama_desa" id="nama_desa"
+                                                                    <input type="text" name="nama_kcm" id="nama_kcm"
                                                                         class="form-control" placeholder="Contoh : Nama Desa"
                                                                         required>
                                                                 </div>

@@ -39,11 +39,10 @@ class KlasifikasiController extends Controller
         $BB             = $request->bb;
         $TB             = $request->tb;
         $IMT            = $BB/(pow(($TB/100),2));
-        $get = DataAnak::join('tbl_desa', 'tbl_anak.id_desa', '=', 'tbl_desa.id_desa')
-                ->select('tbl_anak.*', 'tbl_desa.nama_desa')
+        $get = DataAnak::join('kecamatans', 'tbl_anak.id_kcm', '=', 'kecamatans.id_kcm')
+                ->select('tbl_anak.*', 'kecamatans.nama_kcm')
                 ->where('id_anak', $id_anak)    
                 ->get();
-        // print_r($get);
         foreach ($get as $key => $value) {
             $jenis_kelamin = $value->jenis_kelamin;
         }
@@ -297,8 +296,8 @@ class KlasifikasiController extends Controller
             # code...
         }
         $get = DB::table('tbl_anak')
-                ->join('tbl_desa', 'tbl_anak.id_desa', '=', 'tbl_desa.id_desa')
-                ->select('tbl_anak.*', 'tbl_desa.nama_desa')
+                ->join('kecamatans', 'tbl_anak.id_kcm', '=', 'kecamatans.id_kcm')
+                ->select('tbl_anak.*', 'kecamatans.nama_kcm')
                 ->where('id_anak', $id_anak)    
                 ->get();
         foreach ($get as $key => $value) {
@@ -315,8 +314,8 @@ class KlasifikasiController extends Controller
                 'nama_ibu'      => $value->nama_ibu,
                 'jenis_kelamin' => $jenis_kelamin,
                 'tgl_lahir'     => date("d M Y", strtotime($value->tgl_lahir)),
-                'desa'          => $value->nama_desa,
-                'dusun'         => $value->dusun,
+                'nama_kcm'          => $value->nama_kcm,
+                'kelurahan'     => $value->kelurahan,
                 'rw'            => $value->rw,
                 'rt'            => $value->rt,
                 'posyandu'      => $value->posyandu,
@@ -341,8 +340,8 @@ class KlasifikasiController extends Controller
     function ajax_get(Request $request){
         $id_anak = $request->id_anak;
         // $id_anak = "L20210822001";
-        $get = DataAnak::join('tbl_desa', 'tbl_anak.id_desa', '=', 'tbl_desa.id_desa')
-                ->select('tbl_anak.*', 'tbl_desa.nama_desa')
+        $get = DataAnak::join('kecamatans', 'tbl_anak.id_kcm', '=', 'kecamatans.id_kcm')
+                ->select('tbl_anak.*', 'kecamatans.nama_kcm')
                 ->where('id_anak', $id_anak)    
                 ->get();
         // print_r($get);
@@ -364,8 +363,8 @@ class KlasifikasiController extends Controller
                 'jenis_kelamin' => $jenis_kelamin,
                 'tgl_lahir'     => date("d M Y", strtotime($value->tgl_lahir)),
                 'umur'          => $umur,
-                'desa'          => $value->nama_desa,
-                'dusun'         => $value->dusun,
+                'kcm'           => $value->nama_kcm,
+                'kelurahan'     => $value->kelurahan,
                 'rw'            => $value->rw,
                 'rt'            => $value->rt,
                 'posyandu'      => $value->posyandu
@@ -416,7 +415,10 @@ class KlasifikasiController extends Controller
 
         $insert = DB::table('hasil_zscore')->insert($hasil);
         if ($insert) {
-            # code...
+            $request->session()->flash('message', 'save');
+            return redirect()->action([KlasifikasiController::class, 'index']);
+        } else {
+            $request->session()->flash('message', 'failsave');
             return redirect()->action([KlasifikasiController::class, 'index']);
         }
     }

@@ -89,8 +89,8 @@
                                                             <div class="form-group row">
                                                                 <label class="col-sm-2 col-form-label">Kelurahan/Desa </label>
                                                                 <div class="col-sm-4">
-                                                                    <input type="text" name="dusun"
-                                                                        id="dusun" class="form-control" value="{{ old('dusun') }}"
+                                                                    <input type="text" name="kelurahan"
+                                                                        id="kelurahan" class="form-control" value="{{ old('kelurahan') }}"
                                                                         placeholder="Kelurahan/Desa" required>
                                                                 </div>
                                                             </div>

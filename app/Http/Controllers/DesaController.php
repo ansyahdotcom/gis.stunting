@@ -54,7 +54,7 @@ class DesaController extends Controller
     {
         //
         $model = new DataDesa;
-        $model->nama_desa   = $request->nama_desa;
+        $model->nama_kcm   = $request->nama_kcm;
         $model->longtd      = $request->longtd;
         $model->latd        = $request->latd;
         $model->save();
@@ -103,7 +103,7 @@ class DesaController extends Controller
     {
         //
         $model              = DataDesa::find($id);
-        $model->nama_desa   = $request->nama_desa;
+        $model->nama_kcm   = $request->nama_kcm;
         $model->longtd      = $request->longtd;
         $model->latd        = $request->latd;
         $model->save();

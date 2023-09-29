@@ -95,19 +95,19 @@
                                                             </div>
                                                             <hr>
                                                             <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Kelurahan / Desa</label>
+                                                                <label class="col-sm-2 col-form-label">Kecamatan</label>
                                                                     <div class="col-sm-4">
-                                                                        <input type="text" name="desa"
-                                                                    id="desa" class="form-control"
-                                                                    placeholder="Kelurahan / Desa" readonly>
+                                                                        <input type="text" name="kcm"
+                                                                    id="kcm" class="form-control"
+                                                                    placeholder="Kecamatan" readonly>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Dusun </label>
+                                                                <label class="col-sm-2 col-form-label">Kelurahan/Desa </label>
                                                                 <div class="col-sm-4">
-                                                                    <input type="text" name="dusun"
-                                                                        id="dusun" class="form-control"
-                                                                        placeholder="Dusun" readonly>
+                                                                    <input type="text" name="kelurahan"
+                                                                        id="kelurahan" class="form-control"
+                                                                        placeholder="Kelurahan/Desa" readonly>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
@@ -167,7 +167,7 @@
                                                             <div class="form-group">
                                                                 <div class="col-sm-2">
                                                                     <button class="btn btn-primary" name="analys"
-                                                                    id="analys">Analysis</button>
+                                                                    id="analys">Analisis</button>
                                                                 </div>
                                                             </div>
                                                         </form>
@@ -210,8 +210,8 @@
                                         document.getElementById("jenis_kelamin").value = data.jenis_kelamin;
                                         document.getElementById("tgl_lahir").value = data.tgl_lahir;
                                         document.getElementById("umur").value = data.umur;
-                                        document.getElementById("desa").value = data.desa;
-                                        document.getElementById("dusun").value = data.dusun;
+                                        document.getElementById("kcm").value = data.kcm;
+                                        document.getElementById("kelurahan").value = data.kelurahan;
                                         document.getElementById("rt").value = data.rt;
                                         document.getElementById("rw").value = data.rw;
                                         document.getElementById("posyandu").value = data.posyandu;

@@ -69,7 +69,7 @@
                                                         {{ date('d F Y', strtotime($data->tgl_lahir)) }}
                                                     </td>
                                                     <td>{{$data->nama_kcm}}</td>
-                                                    <td>{{$data->dusun}}</td>
+                                                    <td>{{$data->kelurahan}}</td>
                                                     <td>{{$data->rt}}</td>
                                                     <td>{{$data->rw}}</td>
                                                     <td>{{$data->posyandu}}</td>

@@ -13,8 +13,8 @@ class PetasebaranController extends Controller
         if ($request->session()->get('status') == 'login' && $request->session()->get('jabatan') == 'petugas' ){
             return redirect('/dashboard');
         };
-        // $data['desa'] = DB::table('tbl_desa')->get();
-        $data['desa']  =  HasilZscore::select(\DB::raw("nama_desa, longtd,latd,
+        // $data['desa'] = DB::table('kecamatans')->get();
+        $data['kcm']  =  HasilZscore::select(DB::raw("nama_kcm, longtd_kcm, latd_kcm,
                 COUNT(CASE WHEN `bbpu` = 'Berat Badan Sangat Kurang' THEN 1 END) AS bb_sangat_kurang,
                 COUNT(CASE WHEN `bbpu` = 'Berat Badan Kurang' THEN 1 END) AS bb_kurang,
                 COUNT(CASE WHEN `bbpu` = 'Berat Badan Normal' THEN 1 END) AS bb_normal,
@@ -37,12 +37,13 @@ class PetasebaranController extends Controller
                 COUNT(CASE WHEN `imtpu` = 'Obesitas' THEN 1 END) AS imtu_obesitas
                 "))
             ->join('tbl_anak', 'hasil_zscore.id_anak', '=', 'tbl_anak.id_anak')
-            ->join('tbl_desa', 'tbl_anak.id_desa', '=', 'tbl_desa.id_desa')
+            ->join('kecamatans', 'tbl_anak.id_kcm', '=', 'kecamatans.id_kcm')
             ->join('users', 'hasil_zscore.id', '=', 'users.id')
-            ->groupby('nama_desa', 'longtd', 'latd')
+            ->groupby('nama_kcm', 'longtd_kcm', 'latd_kcm')
             ->get();
         return view('content/main/peta-sebaran_luar', $data);
     }
+    
     public function peta(Request $request){
         if ($request->session()->get('status') != 'login' ){
             return redirect('/');
@@ -51,7 +52,7 @@ class PetasebaranController extends Controller
             # code...
             return redirect('/dashboard-admin');
         };
-        $data['desa']  = HasilZscore::select(\DB::raw("nama_desa, longtd,latd,
+        $data['kcm']  = HasilZscore::select(DB::raw("nama_kcm, longtd_kcm, latd_kcm,
                                     COUNT(CASE WHEN `bbpu` = 'Berat Badan Sangat Kurang' THEN 1 END) AS bb_sangat_kurang,
                                     COUNT(CASE WHEN `bbpu` = 'Berat Badan Kurang' THEN 1 END) AS bb_kurang,
                                     COUNT(CASE WHEN `bbpu` = 'Berat Badan Normal' THEN 1 END) AS bb_normal,
@@ -74,9 +75,9 @@ class PetasebaranController extends Controller
                                     COUNT(CASE WHEN `imtpu` = 'Obesitas' THEN 1 END) AS imtu_obesitas
                                     "))
                                 ->join('tbl_anak', 'hasil_zscore.id_anak', '=', 'tbl_anak.id_anak')
-                                ->join('tbl_desa', 'tbl_anak.id_desa', '=', 'tbl_desa.id_desa')
+                                ->join('kecamatans', 'tbl_anak.id_kcm', '=', 'kecamatans.id_kcm')
                                 ->join('users', 'hasil_zscore.id', '=', 'users.id')
-                                ->groupby('nama_desa', 'longtd', 'latd')
+                                ->groupby('nama_kcm', 'longtd_kcm', 'latd_kcm')
                                 ->get();
         return view('content/main/peta-sebaran', $data);
     }
