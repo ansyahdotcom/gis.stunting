@@ -333,7 +333,6 @@ class KlasifikasiController extends Controller
             ];
         }
         $data['hasil'] = $hasil;
-        // print_r($hasil);
         return view('content/main/hasil_zscore', $data);
     }
 
@@ -344,7 +343,6 @@ class KlasifikasiController extends Controller
                 ->select('tbl_anak.*', 'kecamatans.nama_kcm')
                 ->where('id_anak', $id_anak)    
                 ->get();
-        // print_r($get);
         foreach ($get as $key => $value) {
             if ($value->jenis_kelamin == "L") {
                 $jenis_kelamin = "Laki - Laki";
