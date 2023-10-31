@@ -13,7 +13,7 @@ class LoginController extends Controller
     public function index(Request $request)
     {
         # code...
-        if ($request->session()->get('status') == 'login' || $request->session()->get('jabatan') == 'petugas' ){
+        if ($request->session()->get('status') == 'login' || $request->session()->get('jabatan') == 'petugas' || $request->session()->get('jabatan') == 'bidan' ){
             return redirect('/dashboard');
         }else if ($request->session()->get('status') == 'login' || $request->session()->get('jabatan') == 'admin' ) {
             # code...
@@ -44,7 +44,7 @@ class LoginController extends Controller
                     'username'  => $value->username,
                     'status'    => 'login'       
                 ];
-                if ($value->jabatan == 'petugas') {
+                if ($value->jabatan == 'petugas' || $value->jabatan == 'bidan') {
                     # code...
                     $request->session()->put($sesi);
                     return redirect('/dashboard');

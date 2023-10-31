@@ -39,7 +39,7 @@
                             <hr>
                             <div class="row">
                                 <div class="col-md-10">
-                                    <p class="text-inverse text-left m-b-0">Thank you.</p>
+                                    {{-- <p class="text-inverse text-left m-b-0">Thank you.</p> --}}
                                     <p class="text-inverse text-left"><a href="index-1.htm"><b class="f-w-600"></b></a></p>
                                 </div>
                                 <div class="col-md-2">

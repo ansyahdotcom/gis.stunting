@@ -10,7 +10,7 @@
              </ul>
              <div class="footer-text">
                  <p>
-                     Copyright © 2021 JTI Polije. All Rights Reserved.
+                     Copyright © 2023 JTI Polije. All Rights Reserved.
                  </p>
              </div>
          </div>

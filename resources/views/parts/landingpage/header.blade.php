@@ -27,9 +27,9 @@
                             <li class="nav-item">
                                 <a class="nav-link page-scroll" href="{{ Request::is('/*') ? '#peta' : '/#peta' }}">Peta</a>
                             </li>
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a class="nav-link page-scroll" href="{{ Request::is('/*') ? '#visi_misi' : '/#visi_misi' }}">Visi & Misi</a>
-                            </li>
+                            </li> --}}
                             <li class="nav-item">
                                 <a class="nav-link page-scroll" href="{{ Request::is('/*') ? '#article' : '/#article' }}">Artikel</a>
                             </li>

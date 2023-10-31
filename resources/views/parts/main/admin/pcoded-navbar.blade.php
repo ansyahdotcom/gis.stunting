@@ -39,6 +39,7 @@
                     </li>
                 </ul>
             </li>
+            @if (Session::get('status') == "login" && Session::get('jabatan') == "bidan")
             <li class="pcoded-hasmenu {{ Request::is('zscore', 'zscore/*') ? 'active' : '' }}">
                 <a href="javascript:void(0)">
                     <span class="pcoded-micon"><i class="feather icon-clipboard"></i></span>
@@ -55,6 +56,7 @@
                     </li>
                 </ul>
             </li>
+            @endif
             <li class="pcoded-hasmenu {{ Request::is('data-anak', 'kecamatan', 'data-desa', 'data-riwayat', 'data-anak/*', 'kecamatan/*', 'data-desa/*', 'data-riwayat/*') ? 'active' : '' }}">
                 <a href="javascript:void(0)">
                     <span class="pcoded-micon"><i class="feather icon-server"></i></span>
@@ -62,6 +64,7 @@
                     <span class="pcoded-mcaret"></span>
                 </a>
                 <ul class="pcoded-submenu">
+                    @if (Session::get('status') == "login" && Session::get('jabatan') == "bidan")
                     <li class=" ">
                         <a href="/dataanak" data-i18n="nav.form-components.main">
                             <span class="pcoded-micon"><i class="ti-layers"></i></span>
@@ -69,6 +72,8 @@
                             <span class="pcoded-mcaret"></span>
                         </a>
                     </li>
+                    @endif
+                    @if (Session::get('status') == "login" && Session::get('jabatan') == "petugas")
                     <li class=" ">
                         <a href="/kecamatan" data-i18n="nav.form-components.main">
                             <span class="pcoded-micon"><i class="ti-layers"></i></span>
@@ -76,6 +81,8 @@
                             <span class="pcoded-mcaret"></span>
                         </a>
                     </li>
+                    @endif
+                    @if (Session::get('status') == "login" && Session::get('jabatan') == "bidan")
                     <li class=" ">
                         <a href="/data-riwayat" data-i18n="nav.form-pickers.main">
                             <span class="pcoded-micon"><i class="ti-pencil-alt"></i></span>
@@ -83,8 +90,10 @@
                             <span class="pcoded-mcaret"></span>
                         </a>
                     </li>
+                    @endif
                 </ul>
             </li>
+            @if (Session::get('status') == "login" && Session::get('jabatan') == "petugas")
             <li class="pcoded-hasmenu {{ Request::is('dashboard/article', 'dashboard/article/*', 'dashboard/video', 'dashboard/video/*') ? 'active' : '' }}">
                 <a href="javascript:void(0)">
                     <span class="pcoded-micon"><i class="feather icon-paperclip"></i></span>
@@ -108,6 +117,7 @@
                     </li>
                 </ul>
             </li>
+            @endif
             <li class="pcoded-hasmenu">
                 <a href="javascript:void(0)">
                     <span class="pcoded-micon"><i class="feather icon-user"></i></span>

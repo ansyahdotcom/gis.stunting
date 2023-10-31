@@ -44,6 +44,7 @@
         </div>
     </div>
 </div>
+
 <script type="text/javascript" src="{{asset('assets/kecamatan.js')}}"></script>
 <script>
     $(document).ready(function() {
@@ -244,8 +245,8 @@
         });
 
         var map = L.map('map', {
-            center: [-8.1691275, 113.699675],
-            zoom: 11,
+            center: [-8.238453, 113.740596],
+            zoom: 15,
             layers: [googleHybrid, stunting]
         });
 
@@ -287,7 +288,7 @@
 
         info.update = function (props) {
             this._div.innerHTML = '' + (props ?
-                '<b>Kecamatan ' + props.nama + '</b><br />' :
+                '<b>Kecamatan ' + props.nama_kcm + '</b><br />' :
                 '');
         };
 

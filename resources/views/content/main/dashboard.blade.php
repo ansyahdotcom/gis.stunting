@@ -73,26 +73,6 @@
                                                     <div class="card-footer">
                                                     </div>
                                                 </div>
-                                                <div class="card">
-                                                    <div class="card-header"></div>
-                                                    <div class="card-block">
-                                                        <center><h1>Puskesmas Kalisat</h1></center>
-                                                        <hr>
-                                                        <center><h1>Visi</h1></center>
-                                                        <center><p>Terwujudnya Masyarakat Kalisat Sehat</p></center>
-                                                        <center><h1>Misi</h1></center>
-                                                        <center>
-                                                            <ul>
-                                                                <li> - Menggerakkan pembagunan berwawasan kesehatan di wilayah kerja Puskesmas Kalisat</li>
-                                                                <li> - Mendorong kemandirian hidup sehat bagi perorangan, keluarga dan masyarakat di wilayah kerja Puskesmas Kalisat</li>
-                                                                <li> - Memelihara dan meningkatkan mutu,pemerataan dan keterjangkauan pelayanan kesehatan yang diselenggarakan</li>
-                                                                <li> - Memelihara dan meningkatkan kesehatan perorangan, keluarga, masyarakat beserta lingkungannya</li>
-                                                            </ul>
-                                                        </center>
-                                                    </div>
-                                                    <div class="card-footer"></div>
-                                                </div>
-                                                <!-- Bootstrap slider card end -->
                                             </div>
                                         </div>
                                     </div>

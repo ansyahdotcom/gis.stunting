@@ -23,8 +23,9 @@ class DashboardArticleController extends Controller
             # code...
             return redirect('/dashboard-admin');
         };
+        $user_id = $request->session()->get('id');
         return view('content.main.article', [
-            'article' => Article::latest()->get()
+            'article' => Article::latest()->where('user_id','=', $user_id)->get()
         ]);
     }
 

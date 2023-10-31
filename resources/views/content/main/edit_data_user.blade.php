@@ -33,9 +33,9 @@
                                                                     <input type="hidden" name="_method" id="_method"
                                                                         class="form-control" value="PATCH"
                                                                         required>
-                                                                    <input type="text" name="nama_user" id="nama_user"
+                                                                    <input type="text" name="nama" id="nama"
                                                                         class="form-control" placeholder="Contoh : Udin"
-                                                                        required value="{{$model->nama_user}}">
+                                                                        required value="{{$model->nama}}">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">

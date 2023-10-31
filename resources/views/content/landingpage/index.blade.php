@@ -7,9 +7,9 @@
         <div class="hero-content app-hero-content text-center">
             <div class="row justify-content-md-center">
                 <div class="col-md-10">
-                    <h1 class="wow fadeInUp" data-wow-delay="0s">Pusat Kesehatan Masyarakat Umbulsari</h1>
+                    <h1 class="wow fadeInUp" data-wow-delay="0s">Sistem Informasi Geografis Potensi dan Sebaran Kasus Stunting</h1>
                     <p class="wow fadeInUp" data-wow-delay="0.2s">
-                        Sistem Informasi Geografis Potensi dan Sebaran Kasus Stunting<br class="hidden-xs"> Kerjasama antara Politeknik Negeri Jember dan Puskesmas Umbulsari
+                        di Kabupaten Jember
                     </p>
                 </div>
             </div>
@@ -83,7 +83,7 @@
         </div>
     </div>
 </div>
-<div class="flex-features" id="visi_misi">
+{{-- <div class="flex-features" id="visi_misi">
     <div class="container">
         <div class="flex-split">
             <div class="f-left wow fadeInUp" data-wow-delay="0s">
@@ -108,7 +108,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <div class="pricing-section no-color" id="article">
     <div class="container">
         <div class="row">
@@ -208,7 +208,7 @@
                     <p>
                         Silahkan Click Hubungi Nomor Whatsapp
                     </p>
-                    <a href="https://api.whatsapp.com/send?phone=62812-9295-4539" class="btn btn-primary btn-action btn-fill">Hubungi Whatsapp</a>
+                    <a href="https://api.whatsapp.com/send?phone=6285752131817" target="_blank" class="btn btn-primary btn-action btn-fill">Hubungi Whatsapp</a>
                 </div>
             </div>
             <div class="f-left">
@@ -225,41 +225,39 @@
             <div class="col-md-12">
                 <div class="testimonials owl-carousel owl-theme">
                     <div class="testimonial-single"><img class="img-circle"
-                            src="{{asset('assets\extra-pages\landingpage\assets\images\dony.jpg')}}"
-                            alt="Client Testimonoal">
-                        <div class="testimonial-text">
-                            <p>DOSEN
-                            </p>
-                            <h3>Dony Setiawan Hendyca Putra, S.Kep., Ns., M.Kes.</h3>
-                            <h3>NIDN. 0017128803</h3>
-                        </div>
-                    </div>
-                    <div class="testimonial-single"><img class="img-circle"
                             src="{{asset('assets\extra-pages\landingpage\assets\images\wiryawan.png')}}"
                             alt="Client Testimonoal">
                         <div class="testimonial-text wow fadeInUp" data-wow-delay="0.2s">
-                            <p>DOSEN
-                            </p>
+                            <p>DOSEN</p>
                             <h3>I Gede Wiryawan, S.Kom., M.Kom.</h3>
                             <h3>NIDN. 0017018808</h3>
                         </div>
                     </div>                       
                     <div class="testimonial-single"><img class="img-circle"
-                            src="{{asset('assets\extra-pages\landingpage\assets\images\estin.jpg')}}"
+                            src="{{asset('assets\extra-pages\landingpage\assets\images\DhyaniAyu.JPG')}}"
                             alt="Client Testimonoal">
                         <div class="testimonial-text">
                             <p>DOSEN</p>
-                            <h3>Estin Roso Pristiwaningsih, S.ST., M.Tr.P.</h3>
-                            <h3>NIDN. -</h3>
+                            <h3>Dhyani Ayu P, S.KM., M.P.H.</h3>
+                            <h3>NIDN. 0509118502</h3>
                         </div>
                     </div>
                     <div class="testimonial-single"><img class="img-circle"
-                            src="{{asset('assets\extra-pages\landingpage\assets\images\yusril.jpg')}}"
+                            src="{{asset('assets\extra-pages\landingpage\assets\images\huda.png')}}"
                             alt="Client Testimonoal">
                         <div class="testimonial-text">
-                            <p>MAHASISWA</p>
-                            <h3>Yusril Fahmi Al Faizi</h3>
-                            <h3>NIM. E41171015</h3>
+                            <p>DOSEN</p>
+                            <h3>Huda Ahmad Hudori, S.ST., M.ST.</h3>
+                            <h3>NIDN. 0015059008</h3>
+                        </div>
+                    </div>
+                    <div class="testimonial-single"><img class="img-circle"
+                            src="{{asset('assets\extra-pages\landingpage\assets\images\ainun.jpg')}}"
+                            alt="Client Testimonoal">
+                        <div class="testimonial-text">
+                            <p>DEVELOPER</p>
+                            <h3>Mohammad Ainun Ardiansyah, S.Tr.Kom.</h3>
+                            <h3>NIDN. -</h3>
                         </div>
                     </div>
                 </div>

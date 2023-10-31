@@ -1,5 +1,6 @@
                     @extends('parts.main.admin.master')
                     @section('content')
+                    <div class="flash-data" data-flashdata="<?= session()->get('message') ?>"></div>
                     <div class="pcoded-content">
                         <div class="pcoded-inner-content">
                             <div class="main-body">
@@ -32,7 +33,7 @@
                                                                 <div class="col-sm-4">
                                                                     <input type="text" name="nama_user" id="nama_user"
                                                                         class="form-control" placeholder="Contoh : Udin"
-                                                                        required>
+                                                                        required autocomplete="off" autofocus>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
@@ -41,8 +42,9 @@
                                                                         <select name="jabatan" id="jabatan"
                                                                         class="js-example-placeholder-multiple col-sm-12" required>
                                                                         <option value="&nbsp">--Pilih--</option>
-                                                                        <option value="admin">admin</option>
+                                                                        <option value="admin">Admin</option>
                                                                         <option value="petugas">Petugas</option>
+                                                                        <option value="bidan">Bidan</option>
                                                                         
                                                                     </select>
                                                                 </div>
@@ -52,7 +54,7 @@
                                                                 <div class="col-sm-4">
                                                                     <input type="text" name="username" id="username"
                                                                         class="form-control" placeholder="Contoh : Udin"
-                                                                        required>
+                                                                        required autocomplete="off">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">

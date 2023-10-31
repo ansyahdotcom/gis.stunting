@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Users;
+use App\Models\User;
 use Hash;
 
 class DataUserController extends Controller
@@ -23,7 +23,10 @@ class DataUserController extends Controller
             # code...
             return redirect('/dashboard');
         };
-        $data['dataset'] = Users::all();
+        $data= [
+            'dataset' => User::all(),
+            'user' => $request->session()->get('nama') 
+        ];
         return view('content/main/data_user', $data);
     }
 
@@ -42,7 +45,7 @@ class DataUserController extends Controller
             # code...
             return redirect('/dashboard');
         };
-        $model           = new Users;
+        $model           = new User;
         return view('content/main/tambah_data_user', compact('model'));
     }
 
@@ -55,14 +58,20 @@ class DataUserController extends Controller
     public function store(Request $request)
     {
         //
-        $model = new Users;
+        $model = new User;
         $model->nama        = $request->nama_user;
         $model->jabatan     = $request->jabatan;
         $model->username    = $request->username;
         $password           = $request->password;
         $model->password    = Hash::make($password);
-        $model->save();
-        return \redirect('data-user');
+        $save = $model->save();
+        if ($save) {
+            $request->session()->flash('message', 'save');
+            return redirect('data-user');
+        } else {
+            $request->session()->flash('message', 'failsave');
+            return redirect('data-user/create');
+        }
     }
 
     /**
@@ -92,7 +101,7 @@ class DataUserController extends Controller
             # code...
             return redirect('/dashboard');
         };
-        $model           = Users::find($id);;
+        $model           = User::find($id);;
         return view('content/main/edit_data_user', compact('model'));
     }
 
@@ -106,13 +115,19 @@ class DataUserController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $model = Users::find($id);
-        $model->nama        = $request->nama_user;
+        $model = User::find($id);
+        $model->nama        = $request->nama;
         $model->username    = $request->username;
         $password           = $request->password;
         $model->password    = Hash::make($password);
-        $model->save();
-        return \redirect('data-user');
+        $save = $model->save();
+        if ($save) {
+            $request->session()->flash('message', 'edit');
+            return redirect('data-user');
+        } else {
+            $request->session()->flash('message', 'failedit');
+            return redirect('data-user');
+        }
     }
 
     /**
@@ -121,13 +136,16 @@ class DataUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
-        //
-        $model = Users::find($id);
-        $model->delete();
-        return response()->json([
-            'message' => 'sukses'
-        ]);
+        // delete data
+        $delete = User::destroy($id);
+        if($delete) {
+            $request->session()->flash('message', 'delete');
+            return redirect('/data-user');
+        } else {
+            $request->session()->flash('message', 'notdelete');
+            return redirect('/data-user');
+        }
     }
 }
