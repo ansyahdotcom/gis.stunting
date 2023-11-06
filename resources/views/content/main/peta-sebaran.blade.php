@@ -245,8 +245,8 @@
         });
 
         var map = L.map('map', {
-            center: [-8.238453, 113.740596],
-            zoom: 15,
+            center: [-8.1691275, 113.699675],
+            zoom: 11,
             layers: [googleHybrid, stunting]
         });
 
