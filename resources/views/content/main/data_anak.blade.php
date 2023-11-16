@@ -47,7 +47,7 @@
                                                     <th>Rt.</th>
                                                     <th>Rw.</th>
                                                     <th>Posyandu</th>
-                                                    <th>Aksi</th>
+                                                    <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -106,7 +106,7 @@
                                                     <th>Rt.</th>
                                                     <th>Rw.</th>
                                                     <th>Posyandu</th>
-                                                    <th>Aksi</th>
+                                                    <th>Action</th>
                                                 </tr>
                                             </tfoot>
                                         </table>

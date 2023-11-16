@@ -41,7 +41,7 @@
                                                     <th>Kecamatan</th>
                                                     <th>Longitude</th>
                                                     <th>Latitude</th>
-                                                    <th>Aksi</th>
+                                                    <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -71,7 +71,7 @@
                                                     <th>Kecamatan</th>
                                                     <th>Longitude</th>
                                                     <th>Latitude</th>
-                                                    <th>Aksi</th>
+                                                    <th>Action</th>
                                                 </tr>
                                             </tfoot>
                                         </table>

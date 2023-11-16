@@ -32,7 +32,7 @@
                                                                 <label class="col-sm-2 col-form-label">Nama Kecamatan</label>
                                                                 <div class="col-sm-4">
                                                                     <input type="text" name="nama_kcm" id="nama_kcm"
-                                                                        class="form-control" placeholder="Tegal Besar"
+                                                                        class="form-control" placeholder="Kaliwates"
                                                                         required autocomplete="off" autofocus>
                                                                     @error('nama_kcm')
                                                                         <span class="text-danger mt-2">{{ $message }}</span>

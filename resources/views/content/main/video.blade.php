@@ -41,7 +41,7 @@
                                                     <th>Judul</th>
                                                     <th>Thumbnail</th>
                                                     <th>Status Posting</th>
-                                                    <th>Aksi</th>
+                                                    <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -85,7 +85,7 @@
                                                     <th>Judul</th>
                                                     <th>Thumbnail</th>
                                                     <th>Status Posting</th>
-                                                    <th>Aksi</th>
+                                                    <th>Action</th>
                                                 </tr>
                                             </tfoot>
                                         </table>

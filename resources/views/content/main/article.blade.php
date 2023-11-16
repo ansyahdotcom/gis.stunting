@@ -42,7 +42,7 @@
                                                     <th>Penulis</th>
                                                     <th>Konten</th>
                                                     <th>Tanggal Posting</th>
-                                                    <th>Aksi</th>
+                                                    <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -114,7 +114,7 @@
                                                     <th>Penulis</th>
                                                     <th>Konten</th>
                                                     <th>Tanggal Posting</th>
-                                                    <th>Aksi</th>
+                                                    <th>Action</th>
                                                 </tr>
                                             </tfoot>
                                         </table>

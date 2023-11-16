@@ -117,6 +117,7 @@ class DataUserController extends Controller
         //
         $model = User::find($id);
         $model->nama        = $request->nama;
+        $model->jabatan     = $request->jabatan;
         $model->username    = $request->username;
         $password           = $request->password;
         $model->password    = Hash::make($password);

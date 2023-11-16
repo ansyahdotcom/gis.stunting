@@ -39,6 +39,18 @@
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
+                                                                <label class="col-sm-2 col-form-label">Jabatan</label>
+                                                                    <div class="col-sm-4">
+                                                                        <select name="jabatan" id="jabatan"
+                                                                        class="js-example-placeholder-multiple col-sm-12" required>
+                                                                        <option value="&nbsp">--Pilih--</option>
+                                                                        <option value="admin" @if($model->jabatan =='admin') selected @endif >Admin</option>
+                                                                        <option value="petugas" @if($model->jabatan =='petugas') selected @endif >Petugas</option>
+                                                                        <option value="bidan" @if($model->jabatan =='bidan') selected @endif >Bidan</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
                                                                 <label class="col-sm-2 col-form-label">Username</label>
                                                                 <div class="col-sm-4">
                                                                     <input type="text" name="username" id="username"

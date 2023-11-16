@@ -65,7 +65,7 @@
         <div class="row  justify-content-md-center">
             <div class="col-md-8">
                 <div class="services-content">
-                    <h1 class="wow fadeInUp" data-wow-delay="0s">Peta Sebaran Potensi Desa
+                    <h1 class="wow fadeInUp" data-wow-delay="0s">Peta Sebaran Potensi Stunting Setiap Kecamatan
                     </h1>
                 </div>
             </div>
